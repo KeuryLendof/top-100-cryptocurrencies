@@ -264,7 +264,7 @@ header a{
     position: relative;
     overflow: hidden;
     margin-bottom: 16px;
-    margin-right: 16px;
+    
     flex: auto;
     cursor: pointer;
 }
@@ -426,7 +426,7 @@ header a{
 
 .preciosCambios div{
     text-align: center;
-    margin: 13px;
+    margin: 5px;
 }
 
 .preciosCambios div i{
@@ -602,6 +602,33 @@ header a{
 /*Fin footer*/
 
 
+
+.arriba_container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: none;
+
+}
+
+.arriba_container div{
+    text-align: center;
+}
+
+.arriba_container div a{
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    color: #fff;
+    background: hsl(219, 30%, 18%);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid hsl(219, 30%, 18%);
+    display: grid;
+}
+
+
 @media screen and (max-width: 1000px){
     .productive{
         grid-template-columns: 1fr;
@@ -614,10 +641,40 @@ header a{
         width: 190px;
     }
 }
+@media screen and (max-width: 340px){
+    .preciosCambios div{
+        margin: 0px;
+    }
+}
+@media screen and (max-width: 580px) {
+    .productive_picture{
+        width: 270px;
+        height: 270px;
+    }
+
+    .productive_picture img{
+        width: 270px;
+        height: 270px;
+    }
+}
 
 @media screen and (max-width: 410px){
     .container {
         padding: 6px;
+    }
+    .join_container{
+        width: 77%;
+    }
+    .join_title{
+        font-size: 1.6rem;
+    }
+    .ranking{
+        margin-top: 85px;
+        margin-left: 65px;
+    }
+    .circulo{
+        height: 175px;
+        width: 175px;
     }
 }
 

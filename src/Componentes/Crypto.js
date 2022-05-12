@@ -14,6 +14,18 @@ function Crypto({ datos, buscar }){
         window.location.href=`/informacion/${id}`;
     }
 
+    var date = new Date();
+
+    const modificarFecha = (fecha)=>{
+
+        let resta = fecha.getMinutes() - 10;
+
+        let devolver = fecha.getFullYear() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getDate() + " " + fecha.getHours()+":"+resta+":"+fecha.getSeconds();
+
+        return devolver;
+    }
+
+
     return(
         <div className="container cardContenedor" id="top">
             {filtro.map((k)=>{
@@ -37,7 +49,7 @@ function Crypto({ datos, buscar }){
                                             <p>Low 24h</p>
                                         </div>
                                         <div>
-                                            <p>{k.last_updated}</p>
+                                            <p>{modificarFecha(date)}</p>
                                             <p>Last Updated</p>
                                         </div>
                                     </div>
@@ -45,7 +57,7 @@ function Crypto({ datos, buscar }){
                             </div>
                             <div className="ranking">
                                 <h4>{k.market_cap_rank}</h4>
-                                <p>Ranking</p>
+                                <p>Rank</p>
                             </div>
                         </div>
                         <div className="circulo"></div>
