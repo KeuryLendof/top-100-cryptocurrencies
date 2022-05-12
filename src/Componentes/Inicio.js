@@ -24,7 +24,7 @@ const Inicio =()=>{
 
                 <a href="#top" className="productive_cta">
                     See Cryptocurrency
-                    <img src={img2} class="productive_arrow" alt=""/>
+                    <img src={img2} className="productive_arrow" alt=""/>
                 </a>
             </div>
         </section>
