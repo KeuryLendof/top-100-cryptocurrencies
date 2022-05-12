@@ -5,6 +5,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import Wave from "./Wave";
+import './loader.css';
 
 function Principal(){
 
@@ -21,6 +22,10 @@ function Principal(){
   useEffect(() => {
     peticionGet()
   }, [])
+
+  if(!datos){
+    return <div id="loader"></div>
+  }
 
   return(
     <div className="App">
