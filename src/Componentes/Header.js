@@ -25,7 +25,7 @@ class Header extends Component{
                     <a href='/'>
                         <h1 className="brand-title">ApiCrypto</h1>
                     </a>
-                    <a className="toggle-button">
+                    <a href="#" className="toggle-button">
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>

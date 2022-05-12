@@ -13,7 +13,7 @@ function InfoCryto(){
 
     const {id} = useParams();
 
-    const api = `https://api.coingecko.com/api/v3/coins/${id}`
+    //const api = `https://api.coingecko.com/api/v3/coins/${id}`
 
     const style = 0;
 
@@ -32,7 +32,7 @@ function InfoCryto(){
 
     
     useEffect(() => {
-        axios.get(`${api}`)
+        axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
         .then(({data})=>{
             setInfo(data)
         })
