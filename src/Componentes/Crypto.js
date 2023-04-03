@@ -27,7 +27,7 @@ function Crypto({ datos, buscar }){
 
 
     return(
-        <div className="container cardContenedor" id="top">
+        <main className="container cardContenedor" id="top">
             {filtro.map((k)=>{
                 return(
                     <div className="card" onClick={()=>redireccionar(k.id)}>
@@ -64,7 +64,7 @@ function Crypto({ datos, buscar }){
                     </div>
                 )
             })}
-        </div>
+        </main>
         
     )
 }
