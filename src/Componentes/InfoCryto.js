@@ -13,22 +13,7 @@ function InfoCryto(){
 
     const {id} = useParams();
 
-    //const api = `https://api.coingecko.com/api/v3/coins/${id}`
-
     const style = 0;
-
-
-    // const getInformacion = async ()=>{
-    //     const res = await axios.get(`https://api.coingecko.com/api/v3/coins/${id}`);
-    //     setDatos(res.data)
-    //     //console.log(res.data.description.en)
-
-    //     // fetch(`https://api.coingecko.com/api/v3/coins/${id}`)
-    //     // .then(response => response.json())
-    //     // .then(data => setDatos(data));
-        
-    // }
-
 
     
     useEffect(() => {

@@ -43,16 +43,24 @@ header a{
     color: #fff;
     display: block;
     font-size: 2.8rem;
+    line-height: 0.5;
     font-family: 'Raleway', sans-serif;
+}
+.brand-title span{
+    font-size: 3.5rem;
 }
 .brand-title-footer{
     color: #fff;
     display: block;
     font-size: 2.8rem;
+    font-weight: 800;
     line-height: 0;
     font-family: 'Raleway', sans-serif;
 }
-  
+.brand-title-footer span{
+    font-size: 3.5rem;
+}
+
 .navbar-links {
     height: 100%;
 }
@@ -77,14 +85,14 @@ header a{
   
 .toggle-button {
     position: absolute;
-    top: 0.75rem;
+    top: 0.30rem;
     right: 1rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 21px;
-    margin-top: 18px;
+    margin-top: 10px;
 }
   
 .toggle-button .bar {
@@ -125,7 +133,7 @@ header a{
     }
   
     .toggle-button {
-        margin-top: 66px;
+        margin-top: 58px;
         display: flex;
     }
   
@@ -176,6 +184,8 @@ header a{
 .productive_title{
     font-size: 2.5rem;
     margin-bottom: .8em;
+    display: flex;
+    align-items: center;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -515,6 +525,115 @@ header a{
 
 /*Fin mas info*/
 
+/*Favorite Crypto*/
+
+.cryptos-favoritas{
+    width: 100%;
+  margin-bottom: 5.25rem;
+  border-collapse: collapse;
+  color: #fff;
+}
+.cryptos-favoritas .encabezado{
+    display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  margin-bottom: 0.25rem;
+}
+.cryptos-favoritas .encabezado tr{
+    padding-top: 1.75rem;
+    padding-bottom: 0rem;
+}
+.cryptos-favoritas .encabezado tr th{
+    padding-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 800;
+}
+.cryptos-favoritas tr{
+    text-align: center;
+}
+.cryptos-favoritas tbody{
+    display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+.cryptos-favoritas tbody tr{
+    padding-top: 1.75rem;
+    padding-bottom: 0.75rem;
+    border: 2px solid #DEE2E6;
+}
+.cryptos-favoritas .name-C{
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+.cryptos-favoritas .name-C img{
+    margin-right: 0.5rem;
+    width: 30px;
+}
+.cryptos-favoritas .name-C .name{
+    font-weight: 800;
+}
+.cryptos-favoritas .name-C .symbol{
+    margin-left: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 13px;
+}
+
+.tooltip{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3em;
+    border: 0px solid transparent;
+    background-color: rgba(100,77,237,0.08);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    z-index: 11;
+    position: absolute;
+}  
+.tooltip:hover {
+    box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+     8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+     17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+     36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+     99px 72px 143px rgba(0, 0, 0, 0.08);
+}  
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 4em;
+    background-color: rgba(0, 0, 0, 0.253);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 110%;
+}  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+} 
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+/*Fin Favorite Crypto*/
+
 
 /*Footer*/
 .ppp{
@@ -666,6 +785,19 @@ header a{
         height: 270px;
     }
 }
+@media (prefers-reduced-motion: no-preference) {
+    .productive_picture .crypto-img {
+      animation: App-logo-spin infinite 40s linear;
+    }
+  }
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
 @media screen and (max-width: 410px){
     .container {

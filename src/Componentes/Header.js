@@ -22,7 +22,7 @@ class Header extends Component{
                 <header className='navContainer'>
                     {/* <div className="brand-title">GeoFig</div> */}
                     <a href='/'>
-                        <h1 className="brand-title">ApiCrypto</h1>
+                        <h1 className="brand-title">Crypto<span>100</span></h1>
                     </a>
                     <p className="toggle-button">
                     <span className="bar"></span>
@@ -32,6 +32,7 @@ class Header extends Component{
                     <div className="navbar-links">
                         <ul>
                             <li><a href="#top">Top100</a></li>
+                            <li><a href="/favorite">Favorite</a></li>
                             <li><a href="#search">Search</a></li>
                             <li><a href="#footer">Contact</a></li>
                         </ul>

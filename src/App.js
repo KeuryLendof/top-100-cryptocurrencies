@@ -3,6 +3,7 @@ import './App.css';
 import './Componentes/style.css'
 import InfoCryto from "./Componentes/InfoCryto";
 import Principal from "./Componentes/Principal";
+import Favorite from "./Componentes/Favorite";
 
 
 function App(){
@@ -16,6 +17,7 @@ function App(){
           <Route path="informacion" element={<InfoCryto />}>
             <Route path=":id" element={<InfoCryto />} />
           </Route>
+          <Route path="/favorite" exact element={<Favorite/>}/>
         </Routes>
       </div>
     </div>

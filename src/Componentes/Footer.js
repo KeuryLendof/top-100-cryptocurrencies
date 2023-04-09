@@ -35,7 +35,7 @@ const Footer=()=>{
         <footer className="footer" id="footer">
             <section className="footer__container container">
 
-                <h1 className="brand-title-footer">ApiCrypto</h1>
+                <h1 className="brand-title-footer">Crypto<span>100</span></h1>
 
                 <div className="footer__items">
 

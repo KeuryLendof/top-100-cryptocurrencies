@@ -18,9 +18,7 @@ const Inicio =()=>{
 
                 <h3 className="productive_title">Cryptocurrency Prices by Market Cap</h3>
 
-                <p className="productive_paragraph">ApiCrypto provides a fundamental analysis of the crypto market. In addition to tracking price, volume and market capitalisation, ApiCrypto tracks community growth, open-source code development, major events and on-chain metrics.</p>
-
-                <p className="productive_paragraph">While market cap is a simple and intuitive comparison metric, it is not a perfect point of comparison. Some cryptocurrency projects may appear. As such, it is best to use this metric as a reference alongside other metrics such as trading volume, fully diluted valuation and fundamentals during your research process.</p>
+                <p className="productive_paragraph">Crypto100 is the ultimate site to find the most up-to-date information on the top 100 cryptocurrencies. On Crypto100, you will find detailed statistics, analysis, charts and real-time news on the most important cryptocurrencies in the market. Stay on top of trends and discover the best investment opportunities. If you are an investor or simply interested in the world of cryptocurrencies, Crypto100 is the site to visit.</p>
 
                 <a href="#top" className="productive_cta">
                     See Cryptocurrency

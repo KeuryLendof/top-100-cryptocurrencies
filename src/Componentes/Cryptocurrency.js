@@ -1,33 +1,54 @@
-import './style.css'
-import { useState } from "react";
-import img2 from '../assets/images/icon-arrow.svg'
+import './style.css';
+import { useState, useEffect } from "react";
+import img2 from '../assets/images/icon-arrow.svg';
 import foro from '../assets/images/grupo.png';
 import reddit from '../assets/images/reddit.png';
 import github from '../assets/images/github (2).png';
+import like from '../assets/images/like.svg';
+import unlike from '../assets/images/no-like.svg';
 
 
 function Cryptocurrency({datos}){
 
 
+    const [listaCryptosLikes, setListaCryptosLikes] = useState([]);
     const [visible, setVisible] = useState(false)
-  
-    const toggleVisible = () => {
-      const scrolled = document.documentElement.scrollTop;
-      if (scrolled > 300){
-        setVisible(true)
-      }else if (scrolled <= 300){
-        setVisible(false)
-      }
-    };
+    const [activo, setActivo] = useState(unlike)
+    const [activo2, setActivo2] = useState(like)
 
-    const scrollToTop = () =>{
-        window.scrollTo({
-          top: 0, 
-          behavior: 'smooth'
-        });
-    };
+    const meGusta=(id,name,sym,img)=>{
+        if(listaCryptosLikes.some(obj => obj.NAME === name)){
+            setActivo(unlike)
+            setActivo2(unlike)
+            const filteredList = listaCryptosLikes.filter(obj => obj.ID !== id);
+            //const index = listaCryptosLikes.findIndex(item => item.id === id);
+            //listaCryptosLikes.splice(index, 1);
+            //localStorage.setItem('CryptosLikes', JSON.stringify(filteredList));
+            setListaCryptosLikes(filteredList)
+        }else{
+            setActivo(like)
+            setActivo2(like)
+            const registro = {
+                ID: `${id}`,
+                NAME: `${name}`,
+                SYMBOL: `${sym}`,
+                IMAGE: `${img}`
+            }
+            setListaCryptosLikes([registro, ...listaCryptosLikes])
+        }
+    }
 
-    window.addEventListener('scroll', toggleVisible);
+    useEffect(()=>{
+        const storeTareas = JSON.parse(localStorage.getItem('CryptosLikes'));
+        if(storeTareas){
+          setListaCryptosLikes(storeTareas);
+        }
+    }
+    ,[])
+    useEffect(() => {
+        localStorage.setItem('CryptosLikes', JSON.stringify(listaCryptosLikes));
+    }
+    ,[listaCryptosLikes])
 
     
     return(
@@ -35,14 +56,17 @@ function Cryptocurrency({datos}){
             <section className="productive inicioContainer">
                     
                 <figure className="productive_picture">
-                    <img src={datos.image.large} alt="" className="productive_img" />
+                    <img src={datos.image.large} alt="" className="productive_img crypto-img" />
                 </figure>
                     
                 
 
                 <div className="productive_text">
 
-                    <h3 className="productive_title">{`${datos.name}`}</h3>
+                    <h3 className="productive_title">
+                        {`${datos.name}`}
+                        <img style={{marginLeft:'10px',cursor:'pointer'}} onClick={()=>meGusta(datos.id,datos.name,datos.symbol,datos.image.small)} src={listaCryptosLikes.some(obj => obj.ID === datos.id)?activo2:activo} alt="" className="" />
+                    </h3>
 
                     <p className="productive_paragraph_info">{datos.description.en}</p>
 
@@ -117,24 +141,6 @@ function Cryptocurrency({datos}){
                 </div>
 
             </section>
-            <div className="arriba_container" style={{display: visible ? 'inline' : 'none'}}>
-                <div>
-                    <a onClick={scrollToTop}>
-                        <svg
-                            width="35"
-                            height="35"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            >
-                            <path
-                                d="M17.6569 16.2427L19.0711 14.8285L12.0001 7.75739L4.92896 14.8285L6.34317 16.2427L12.0001 10.5858L17.6569 16.2427Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                    </a>
-                </div>
-            </div>
        </div>
     )
     
