@@ -3,10 +3,22 @@ import { useState, useEffect } from "react";
 import Header from './Header';
 import Wave from './Wave';
 import Footer from './Footer';
+import FavoriteNulo from './FavoriteNulo';
 
 function Favorite(){
 
     const [listaCryptosLikes, setListaCryptosLikes] = useState([]);
+
+    const redireccionar = (id) => {
+        window.location.href=`/informacion/${id}`;
+    }
+
+    const removeCrypto=(id)=>{
+
+        const filteredList = listaCryptosLikes.filter(obj => obj.ID !== id);
+        setListaCryptosLikes(filteredList)
+
+    }
 
     useEffect(()=>{
         const storeCryptos = JSON.parse(localStorage.getItem('CryptosLikes'));
@@ -19,17 +31,6 @@ function Favorite(){
         localStorage.setItem('CryptosLikes', JSON.stringify(listaCryptosLikes));
     }
     ,[listaCryptosLikes])
-
-    const removeCrypto=(id)=>{
-
-        const filteredList = listaCryptosLikes.filter(obj => obj.ID !== id);
-        setListaCryptosLikes(filteredList)
-
-    }
-
-    const redireccionar = (id) => {
-        window.location.href=`/informacion/${id}`;
-    }
 
     return (
         <>
@@ -46,6 +47,7 @@ function Favorite(){
                     </thead>
                     <tbody>
                     {
+                        listaCryptosLikes.length === 0?<FavoriteNulo/>:
                         listaCryptosLikes.map((c,index)=>{
                             return(
                                 <tr>
@@ -70,6 +72,15 @@ function Favorite(){
                     }
                     </tbody>
                 </table>
+                {/* {listaCryptosLikes.length===0?<FavoriteList favorite={listaCryptosLikes}/>:listaCryptosLikes.map((c,index)=>{
+                    return(
+                        <>
+                            <FavoriteNulo/>
+                            <h1>holaa</h1>
+                        </>
+                    )
+                })} */}
+                {/* <FavoriteList favorite={listaCryptosLikes}/> */}
             </main>
             <Wave estilo={0}/>
             <Footer />
